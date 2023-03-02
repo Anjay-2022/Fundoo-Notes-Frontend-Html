@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundoo Notes</title>
+
+    <link rel="stylesheet" type="text/css" href="../CSS/Main.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/sidenav.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/takenoteOne.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/takenoteTwo.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/takenote3.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="../JS/Main.js" defer></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="menukeep">
+            <div class="iconcontainer"><img class="icons" src='../Assets/menu.png'></div>
+            <div class="iconcontainer"><img class="icons" src='../Assets/keeps.png'></div>
+            <h1>Keep</h1>
+        </div>
+        <div class="searchcontainer">
+            <div class="search_bar">
+                <div class="iconcontainer"><img class="icons" src='../Assets/search-interface-symbol.png'></div>
+                <input class="search" type="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="refreshAccount">
+            <div class="refresh-setting">
+                <div class="iconcontainer"><img class="icons" src='../Assets/refresh.png'></div>
+                <div class="iconcontainer"><img class="icons" src='../Assets/layout.png'></div>
+                <div class="iconcontainer"><img class="icons" src='../Assets/settings.png'></div>
+            </div>
+            <div class="ninedotsAccount">
+                <div class="iconcontainer"><img class="icons" src='../Assets/menu (1).png'></div>
+                <div class="iconcontainer"><img class="icons" src='../Assets/user.png'></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="middle">
+        <div class="sidenav">
+            <div class="sidenavtile">
+                <div class="iconcontainer"><img class="icon" src='../Assets/light-bulb.png'></div>
+                <div class="tilename">Notes</div>
+            </div>
+            <div class="sidenavtile">
+                <div class="iconcontainer"><img class="icon" src='../Assets/notification.png'></div>
+                <div class="tilename">Reminders</div>
+            </div>
+            <div class="sidenavtile">
+                <div class="iconcontainer"><img class="icon" src='../Assets/pen.png'></div>
+                <div class="tilename">Edit labels</div>
+            </div>
+            <div class="sidenavtile">
+                <div class="iconcontainer"><img class="icon" src='../Assets/download-file.png'></div>
+                <div class="tilename">Archive</div>
+            </div>
+            <div class="sidenavtile">
+                <div class="iconcontainer"><img class="icon" src='../Assets/delete.png'></div>
+                <div class="tilename">Trash</div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="takenote1" id="takenote1" onclick="takenoteOneclicked()">
+                <input class="takenoteOneinput" type="text" placeholder="Take a note...">
+                <div class="takenoteOneiconcontainer">
+                    <div class="iconbackground"><img class="takenoteOneicon" src='../Assets/checkbox.png'></div>
+                    <div class="iconbackground"><img class="takenoteOneicon" src='../Assets/brush-stroke.png'></div>
+                    <div class="iconbackground"><img class="takenoteOneicon" src='../Assets/picture.png'></div>
+                </div>
+            </div>
+
+            <div class="takenoteTwo" id="takenote2" o="takenoteTwoclicked()">
+                <div class="takenoteTwotitle"><input class="takenoteTwotitlefield" type="text" placeholder="Title">
+                    <div class="iconbackground"><img class="takenote2icon" src='../Assets/tack.png'></div>
+                </div>
+                <textarea class="takenoteTwoinputfield" type="text" ></textarea>
+                <div class="takenoteTwofooter">
+                    <div class="takenoteTwofootericon">
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/bell-ring-alarm.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/add-contact.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/art.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/download-file.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/picture.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/dots.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/undo.png'></div>
+                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/redo.png'></div>
+                    </div>
+                    <button class="takenoteTwoclosebutton">Close</button>
+                </div>
+            </div>
+
+            <div  class="SaveNoteContainer">
+              
+            </div>
+        </div>
+    </div>
+    <div class="footer">Open-source licenses</div>
+
+</body>
+
+</html>

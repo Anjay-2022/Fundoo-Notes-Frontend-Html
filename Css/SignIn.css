@@ -1,0 +1,185 @@
+.body {
+    display: flex;
+    background: #fff;
+    direction: ltr;
+    font-size: 100%;
+    line-height: 1.4286;
+    color: #202124;
+    font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#main {
+    display: flex;
+    height: 76%;
+    width: 33%;
+    border-radius: 2%;
+    border: 2px solid #D4D6DA;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#googleimg {
+    display: flex;
+    justify-content: center;
+    height: 6%;
+    width: 80%;
+    /* border: 2px solid gold; */
+}
+
+#signIn {
+    display: flex;
+    justify-content: center;
+    height: 8%;
+    width: 80%;
+    /* border: 2px solid gold; */
+    font-size: 250%;
+    font-weight: 400;
+    line-height: 1.3333;
+}
+
+#tocontinue {
+    display: flex;
+    justify-content: center;
+    height: 5%;
+    width: 80%;
+    /* border: 2px solid gold; */
+    font-size: 150%;
+    font-weight: 400;
+    line-height: 1.3333;
+}
+#loginform{
+    display: flex;
+    height: 25%;
+    width: 80%;
+    /* background-color: yellow; */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#email {
+    height: 40%;
+    width: 97%;
+    border: 2px solid #D4D6DA;
+    border-radius: 5px;
+    font-size: 120%;
+}
+#password {
+    height: 40%;
+    width: 97%;
+    border: 2px solid #D4D6DA;
+    border-radius: 5px;
+    font-size: 120%;
+}
+
+#forgetemail {
+    display: flex;
+    height: 5%;
+    width: 80%;
+    color: #1a73e8;
+    font-size: 100%;
+    font-weight: 600;
+    /* background-color: tomato; */
+}
+
+#not_your {
+    display: inline;
+    justify-content: center;
+    height: 12%;
+    width: 80%;
+    /* border: 2px solid rgb(61, 8, 249); */
+    color: #5f6368;
+    font-size: 100%;
+    line-height: 1.4286;
+    word-break: break-word;
+}
+
+#createaccount_Next {
+    display: flex;
+    justify-content: space-between;
+    height: 10%;
+    width: 80%;
+}
+
+#createaccountbutton {
+    display: flex;
+    height: 70%;
+    width: 50%;
+    /*background-color: violet;*/
+    align-items: center;
+    font-size: 120%;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+#nextbutton {
+    display: flex;
+    height: 70%;
+    width: 15%;
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 120%;
+}
+
+#footer {
+    display: flex;
+    height: 7%;
+    width: 33%;
+    /* background-color: #D4D6DA; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#language {
+    display: flex;
+    height: auto;
+    width: 45%;
+    /* background-color: yellowgreen; */
+}
+
+#helpPT {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 40%;
+    justify-content: end;
+    /* background-color: rgb(144, 130, 238); */
+}
+
+#helpTerm {
+    display: flex;
+    height: auto;
+    width: 30%;
+    align-items: end;
+    justify-content: end;
+    /* background-color: rgb(164, 130, 238); */
+}
+
+#privacy {
+    display: flex;
+    height: auto;
+    width: 40%;
+    align-items: end;
+    justify-content: end;
+    /* background-color: rgb(130, 238, 135); */
+}
+
+
+
+/* #inputfield{
+    display: flex;
+    height: 10%;
+    width: 80%;
+    border: 2px solid  #D4D6DA;
+    border-radius: 5px;
+} */

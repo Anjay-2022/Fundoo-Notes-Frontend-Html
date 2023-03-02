@@ -1,0 +1,95 @@
+/* .header {
+    display: flex;
+    height: 9vh;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: start;
+    background-color: aqua;
+    border-bottom: 2px solid black ;
+} */
+
+.iconcontainer {
+    display: flex;
+    height: 58px;
+    width: 58px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+}
+.iconcontainer:hover{
+    background-color:#F1F3F4 ;
+}
+
+
+.icons {
+    height: 25px;
+    width: 25px;
+}
+
+.menukeep {
+    display: flex;
+    height: 100%;
+    width: 16%;
+    /* background-color: bisque; */
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.searchcontainer {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: .F1F3F4; */
+
+}
+
+.search_bar {
+    display: flex;
+    height: 80%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    padding-left: 3%;
+    box-shadow: 1px;
+    background-color: #F1F3F4;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    height: 80%;
+    width: 90%;
+    background-color: #F1F3F4;
+    border: 2px solid #F1F3F4;
+    font-size: 120%;
+}
+
+.refreshAccount {
+    display: flex;
+    height: 100%;
+    width: 28%;
+    /* background-color: bisque; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.refresh-setting {
+    display: flex;
+    height: 100%;
+    width: 47%;
+    /* background-color: yellow; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ninedotsAccount {
+    display: flex;
+    height: 100%;
+    width: 25%;
+    /* background-color: violet; */
+    justify-content: space-around;
+    align-items: center;
+}
