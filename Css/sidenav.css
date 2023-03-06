@@ -5,13 +5,25 @@
     background-color: rgb(246, 214, 175);
 } */
 
-.sidenav {
+.sidenavSmall {
     height: auto;
-    width: 18%;
+    width: 5%;
     /* background-color: rgb(238, 181, 75); */
+    position: fixed;
+
+
 }
 
-.sidenavtile {
+.sidenav {
+    display: none;
+    height: 89vh;
+    min-width: 18vw;
+    /* background-color: rgb(238, 181, 75); */
+    position: fixed;
+
+}
+
+.sidenavtileSmall {
     display: flex;
     height: 60px;
     width: 100%;
@@ -26,13 +38,41 @@
     overflow: hidden;
     /* justify-content: space-around; */
 }
-.sidenavtile:hover{
+
+.sidenavtile {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    /* background-color: #d64848; */
+    border-radius: 0 25px 25px 0;
+    color: .202124;
+    align-items: center;
+    letter-spacing: .05em;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 110%;
+    line-height: 1.25rem;
+    overflow: hidden;
+    /* justify-content: space-around; */
+    
+}
+
+.sidenavtile:hover {
     background-color: #F1F3F4;
 
 }
-.sidenavtile:active{
+
+.sidenavtile:active {
     background-color: #feefc3;
 
+}
+
+.iconcontainerSmall {
+    display: flex;
+    height: 58px;
+    width: 58px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
 }
 .iconcontainer {
     display: flex;
@@ -42,15 +82,33 @@
     justify-content: center;
     border-radius: 35px;
 }
-.iconcontainer:hover{
-    background-color:#cfe6f3 ;
+
+.iconcontainer:hover {
+    background-color: #cfe6f3;
 }
-.icon{
+
+.icon {
     position: relative;
     height: 25px;
-    width: 25px;         
+    width: 25px;
 }
-.tilename{
+
+.tilename {
     position: relative;
     left: 8%;
+}
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    color: .5f6368;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 2px 5px;
+    /* background-color: yellow; */
+    position: relative;  /* footer ki setting hai notes se neeche rahne ko*/
+    top: 41vh;
+    left: 1vw;
 }

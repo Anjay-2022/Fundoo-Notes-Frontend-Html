@@ -4,8 +4,11 @@
     width: 100vw;
     justify-content: space-between;
     align-items: start;
-    /* background-color: aqua; */
+    background-color: white;
     border-bottom: 2px solid black ;
+    position: fixed;
+    z-index: 2;
+
 }
 
 .middle {
@@ -13,25 +16,21 @@
     min-height: 81vh;
     width: 100vw;
     /* background-color: rgb(246, 214, 175); */
+    position: absolute;
+    top: 9vh;
 }
 .main {
     display: flex;
     height: auto;
-    width: 82%;
+    width: 95vw;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     /* background-color: rgb(240, 158, 8); */
     font-family: Roboto, Arial, sans-serif;
     color: .202124;
+    position: relative;
+    left: 5vw;
+    top: 3vh;
 }
-.footer {
-    display: flex;
-    align-items: center;
-    height: 5vh;
-    color: .5f6368;
-    cursor: pointer;
-    font-size: 15px;
-    padding: 2px 5px;
-    background-color: yellow;
-}
+

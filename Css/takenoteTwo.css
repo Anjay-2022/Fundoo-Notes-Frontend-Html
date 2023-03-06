@@ -1,6 +1,6 @@
 .takenoteTwo {
     display: none;
-    height: 15vh;
+    height: 25vh;
     width: 50%;
     /* background-color: yellow; */
     align-items: center;
@@ -10,12 +10,12 @@
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 45%), -2px -2px 5px rgb(0 0 0 / 10%);
     position: relative;
-    top: 5%;
+    top: 2%;
 }
 
 .takenoteTwotitle {
     display: flex;
-    height: 25%;
+    height: 15%;
     width: 100%;
     /* background-color: aqua; */
     font-size: 120%;
@@ -34,16 +34,17 @@
 }
 .takenoteTwoinputfield {
     display: flex;
-    height: 50%;
+    height: 70%;
     width: 100%;
     font-size: large;
     /* background-color: yellowgreen; */
     border: 1px solid white;
+    
 }
 
 .takenoteTwofooter {
     display: flex;
-    height: 25%;
+    height: 15%;
     width: 100%;
     justify-content: space-between;
     /* background-color: blueviolet; */

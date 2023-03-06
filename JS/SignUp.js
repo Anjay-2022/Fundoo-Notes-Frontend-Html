@@ -1,6 +1,7 @@
 $(document).ready(
     function () {
-    $("#nextbutton").click(function () {
+    $("#nextbutton").click(
+        function () {
         event.preventDefault();
 
         let firstname = $("#firstname").val();

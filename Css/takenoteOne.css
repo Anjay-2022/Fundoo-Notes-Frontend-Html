@@ -12,7 +12,7 @@
 
 .takenote1 {
     display: flex;
-    height: 5vh;
+    height: 8vh;
     width: 50%;
     /* background-color: yellow; */
     align-items: center;
@@ -21,7 +21,7 @@
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 45%), -2px -2px 5px rgb(0 0 0 / 10%);
     position: relative;
-    top: 5%;
+    top: 2%;
 }
 
 .takenoteOneinput {

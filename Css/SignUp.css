@@ -142,7 +142,6 @@
 #signininsteadbutton {
     display: flex;
     height: 70%;
-    width: 50%;
     /* background-color: violet; */
     align-items: center;
     font-size: 100%;
@@ -153,7 +152,6 @@
 #nextbutton {
     display: flex;
     height: 70%;
-    width: 20%;
     background-color: #1a73e8;
     color: white;
     border-radius: 5px;

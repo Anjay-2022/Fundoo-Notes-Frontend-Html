@@ -105,17 +105,18 @@
     justify-content: space-between;
     height: 10%;
     width: 80%;
+    /* background-color: #D4D6DA; */
 }
 
 #createaccountbutton {
     display: flex;
     height: 70%;
-    width: 50%;
-    /*background-color: violet;*/
+    /* background-color: violet; */
     align-items: center;
     font-size: 120%;
     font-weight: 600;
     color: #1a73e8;
+    
 }
 
 #nextbutton {

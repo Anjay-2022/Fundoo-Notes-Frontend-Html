@@ -22,7 +22,7 @@ $(document).ready(function () {
             success: function (res) {
                 alert("data posted succesfully");
                 console.log(res)
-                localStorage.setItem("token",res.data)
+                localStorage.setItem("token",`Bearer ${res.data}`)
             },
             error: function (error) {
                 console.log(error.responseJSON);
@@ -32,6 +32,9 @@ $(document).ready(function () {
     });
 })
 
+function validate(){
+    window.location.href = "http://127.0.0.1:5500/Html/main.html";
+}
 
 
 
