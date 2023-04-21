@@ -1,23 +1,71 @@
-.SaveNoteContainer {
+.SaveNoteContainerclass {
     display: flex;
-    height: auto;
-    width: 95vw;
-    padding: 1%;
     flex-direction: row;
+    height: auto;
+    width: 100%;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: flex-start;
-    background-color: aqua;
-    position: relative;
-    top: 50vh;
+    /* background-color: aqua; */
+    /* border: 2px solid red; */
+    margin-top: 25px;
+    top: 10vh; 
     row-gap: 25px;
+    column-gap: 25px;
     
 }
+.Trash {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: aqua; */
+    /* border: 2px solid red; */
+    margin-top: 25px;
+    top: 10vh; 
+    row-gap: 25px;
+    column-gap: 25px;
+    
+}
+.Archive {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: aqua; */
+    /* border: 2px solid red; */
+    margin-top: 25px;
+    top: 10vh; 
+    row-gap: 25px;
+    column-gap: 25px;
+}
+.searchresult {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: aqua; */
+    /* border: 2px solid red; */
+    margin-top: 25px;
+    top: 10vh; 
+    row-gap: 25px;
+    column-gap: 25px;
+}
+
 
 .takenote3 {
     display: flex;
     min-height: auto;
-    width: 24vw;
+    width: 22vw;
     border-radius: 10px;
     /* background-color: yellow; */
     align-items: center;
@@ -47,6 +95,8 @@
     /* background-color: yellowgreen; */
     border: 1px solid white;
     size: 45%;
+    border :none;
+    outline: none;
 }
 .takenote3inputfield {
     display: flex;
@@ -57,6 +107,8 @@
     border: 1px solid white;
     size: 45%;
     word-wrap: break-word;
+    border :none;
+    outline: none;
 }
 
 .takenote3footer {
@@ -91,4 +143,13 @@
 .takenote3icon{
     height: 20px;
     width: 20px;
+}
+
+.restoreButton{
+    display: flex;
+    outline: none;
+    border: none;  
+}
+.restoreButton:hover{
+    background-color: white;
 }

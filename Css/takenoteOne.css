@@ -21,7 +21,7 @@
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 45%), -2px -2px 5px rgb(0 0 0 / 10%);
     position: relative;
-    top: 2%;
+    top: .8%;
 }
 
 .takenoteOneinput {
@@ -30,8 +30,11 @@
     color: .202124;
     font-size: 115%;
     font-weight: 600;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    border :none;
+    outline: none;
 }
+
 
 .takenoteOneiconcontainer {
     display: flex;

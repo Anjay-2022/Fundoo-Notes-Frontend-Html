@@ -1,4 +1,4 @@
-.takenoteTwo {
+.takenoteSecond {
     display: none;
     height: 25vh;
     width: 50%;
@@ -10,7 +10,7 @@
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 45%), -2px -2px 5px rgb(0 0 0 / 10%);
     position: relative;
-    top: 2%;
+    top: .8%;
 }
 
 .takenoteTwotitle {
@@ -22,6 +22,7 @@
     align-items: center;
     color: .202124;
     justify-content: space-between;
+    
 }
 
 .takenoteTwotitlefield {
@@ -30,7 +31,9 @@
     width: 100%;
     font-size: large;
     /* background-color: yellowgreen; */
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    border :none;
+    outline: none;
 }
 .takenoteTwoinputfield {
     display: flex;
@@ -39,6 +42,8 @@
     font-size: large;
     /* background-color: yellowgreen; */
     border: 1px solid white;
+    border :none;
+    outline: none;
     
 }
 

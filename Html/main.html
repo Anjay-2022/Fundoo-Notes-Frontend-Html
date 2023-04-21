@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundoo Notes</title>
 
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="../Css/MOdal.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Main.css">
     <link rel="stylesheet" type="text/css" href="../CSS/header.css">
     <link rel="stylesheet" type="text/css" href="../CSS/sidenav.css">
     <link rel="stylesheet" type="text/css" href="../CSS/takenoteOne.css">
     <link rel="stylesheet" type="text/css" href="../CSS/takenoteTwo.css">
     <link rel="stylesheet" type="text/css" href="../CSS/takenote3.css">
-    <script src="https://code.jquery.com/jquery-3.6.3.js"
-        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <script src="../JS/Main.js" defer></script>
+
     <script src="../JS/sidenav.js" defer></script>
     <script src="../JS/header.js" defer></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../zabc/MOdal.css">
+    <script src="../JS/Main.js" defer></script>
 
 </head>
 
@@ -29,55 +32,59 @@
     <header class="header">
         <div class="menukeep">
             <div class="iconcontainer" id="threelineicon" onclick="threelineicon()"><img class="icons" src='../Assets/menu.png'></div>
-            <div class="iconcontainer"><img class="icons" src='../Assets/keeps.png'></div>
-            <h1>Keep</h1>
+            <div ><img id="fundooNotesimg" src='../Assets/keeps.png'></div>
+            <!-- <h1>Fundoo Notes</h1> -->
         </div>
         <div class="searchcontainer">
             <div class="search_bar">
-                <div class="iconcontainer"><img class="icons" src='../Assets/search-interface-symbol.png'></div>
-                <input class="search" type="search" placeholder="Search">
+                <input class="search" id="search" type="search" placeholder="Search"  >
+                <div class="iconcontainer"  onclick="search()"><img class="icons" src='../Assets/search-interface-symbol.png'></div>
             </div>
         </div>
         <div class="refreshAccount">
             <div class="refresh-setting">
-                <div class="iconcontainer"><img class="icons" src='../Assets/refresh.png'></div>
+                <div class="iconcontainer" onclick="refresh()"><img class="icons" src='../Assets/refresh.png'></div>
                 <div class="iconcontainer"><img class="icons" src='../Assets/layout.png'></div>
                 <div class="iconcontainer"><img class="icons" src='../Assets/settings.png'></div>
             </div>
             <div class="ninedotsAccount">
                 <div class="iconcontainer"><img class="icons" src='../Assets/menu (1).png'></div>
-                <div class="iconcontainer"><img class="icons" src='../Assets/user.png'></div>
+                <div class="iconcontainer logOut" content="#signout"><img class="icons" src='../Assets/user.png'></div>
             </div>
         </div>
     </header>
 
+    <div class="hidden" id="signout">
+        <div class="signout-body" style="display: flex;justify-content: center;
+        align-items: center;"><button  onclick="logoutfunc()"><a href="http://127.0.0.1:5501/Html/SignIn.html">Logout</a></button></div>
+    </div>
+
     <div class="middle">
-        <div class="sidenavSmall" id="sidenavSmall" onclick="openNav()">
+        <div class="sidenavSmall" id="sidenavSmall" >
             <div class="sidenavtileSmall">
-                <div class="iconcontainer"><img class="icon" onclick='myfunction("k")' src='../Assets/light-bulb.png'>
-                </div>
+                <div class="iconcontainer" onclick="openNav()"><img class="icon" src='../Assets/light-bulb.png'></div>
             </div>
             <div class="sidenavtileSmall">
-                <div class="iconcontainer"><img class="icon" src='../Assets/notification.png'></div>
+                <div class="iconcontainer" onclick="openNav()"><img class="icon" src='../Assets/notification.png'></div>
             </div>
             <div class="sidenavtileSmall">
-                <div class="iconcontainer"><img class="icon" src='../Assets/pen.png'></div>
+                <div class="iconcontainer" onclick="openNav()"><img class="icon" src='../Assets/pen.png'></div>
             </div>
             <div class="sidenavtileSmall">
-                <div class="iconcontainer"><img class="icon" src='../Assets/download-file.png'></div>
+                <div class="iconcontainer" onclick="openNav()"><img class="icon" src='../Assets/download-file.png'></div>
             </div>
             <div class="sidenavtileSmall">
-                <div class="iconcontainer"><img class="icon" src='../Assets/delete.png'></div>
+                <div class="iconcontainer" onclick="openNav()"><img class="icon" src='../Assets/delete.png'></div>
             </div>
         </div>
         <div class="sidenav" id="sidenav" >
-            <div class="sidenavtile">
-                <div class="iconcontainerSmall"><img class="icon" onclick='myfunction("k")'
+            <div class="sidenavtile" onclick="getallnotes()">
+                <div class="iconcontainerSmall"><img class="icon" '
                         src='../Assets/light-bulb.png'>
                 </div>
                 <div class="tilename">Notes</div>
             </div>
-            <div class="sidenavtile">
+            <div class="sidenavtile" onclick="toggle()">
                 <div class="iconcontainerSmall"><img class="icon" src='../Assets/notification.png'></div>
                 <div class="tilename">Reminders</div>
             </div>
@@ -85,18 +92,18 @@
                 <div class="iconcontainerSmall"><img class="icon" src='../Assets/pen.png'></div>
                 <div class="tilename">Edit labels</div>
             </div>
-            <div class="sidenavtile">
+            <div class="sidenavtile" onclick="getArchive()">
                 <div class="iconcontainerSmall"><img class="icon" src='../Assets/download-file.png'></div>
                 <div class="tilename">Archive</div>
             </div>
-            <div class="sidenavtile">
+            <div class="sidenavtile" onclick="getTrash()">
                 <div class="iconcontainerSmall"><img class="icon" src='../Assets/delete.png'></div>
                 <div class="tilename">Trash</div>
             </div>
             <div class="footer">Open-source licenses</div>
         </div>
 
-        <div class="main" id="main">
+        <div class="main" id="main" >
             <div class="takenote1" id="takenote1" onclick="takenoteOneclicked()">
                 <input class="takenoteOneinput" type="text" placeholder="Take a note...">
                 <div class="takenoteOneiconcontainer">
@@ -106,18 +113,18 @@
                 </div>
             </div>
 
-            <div class="takenoteTwo" id="takenote2">
+            <div class="takenoteSecond" id="takenote2" >
                 <div class="takenoteTwotitle"><input class="takenoteTwotitlefield" id="takenoteTwotitlefield"
                         type="text" placeholder="Title">
                     <div class="iconbackground"><img class="takenote2icon" src='../Assets/tack.png'></div>
                 </div>
-                <input class="takenoteTwoinputfield" id="takenoteTwoinputfield" type="text"></input>
+                <input class="takenoteTwoinputfield" id="takenoteTwoinputfield" type="text" placeholder="Take a note..."></input>
                 <div class="takenoteTwofooter">
                     <div class="takenoteTwofootericon">
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/bell-ring-alarm.png'>
                         </div>
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/add-contact.png'></div>
-                        <div class="iconbackground"><img class="takenote2icon" src='../Assets/art.png'></div>
+                        <div class="iconbackground btn " content="#a1" ><img class="takenote3MODALicon" src='../Assets/art.png'></div>
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/download-file.png'></div>
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/picture.png'></div>
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/dots.png'></div>
@@ -127,43 +134,47 @@
                     <button class="takenoteTwoclosebutton" onclick="takenoteTwoclosebutton()">Close</button>
                 </div>
             </div>
-
-
-            <div class="SaveNoteContainer" id="SaveNoteContainer">
-
-            </div>
-
-
+            <div class="SaveNoteContainerclass" id="SaveNoteContainer1"></div>
+            <!-- <div class="SaveNoteContainerclassTrash" id="SaveNoteContainerTrash1"></div>
+            <div class="SaveNoteContainerclassArchive" id="SaveNoteContainerArchive1"></div> -->
+        </div>
+        <div class="main2" id="main2">
+            <div class="Archive" id="Archive"></div>
+        </div>
+        <div class="main3" id="main3">
+            <div class="Trash" id="Trash"></div>
+        </div>
+        <div class="main4" id="main4">
+            <div class="searchresult" id="searchresult"></div>
         </div>
     </div>
      
 
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="SaveNoteContainer">
-            <div class="takenote3MODAL">
-                <div class="takenote3MODALtitle"><input class="takenote3MODALtitlefield" type="text"
-                        value="${data.data[i].title}">
+        <div class="SaveNoteContainerModal"  >
+            <div class="takenote3MODAL" id="takenote3MODAL">
+                <div class="takenote3MODALtitle"><input class="takenote3MODALtitlefield" id="takenote3MODALtitlefield" type="text" value="">
                     <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/tack.png'></div>
                 </div>
-
-                <textarea class="takenote3MODALinputfield" type="text">${data.data[i].description}</textarea>
-
+                <input class="takenote3MODALinputfield"  id="takenote3MODALinputfield" type="text" />
                 <div style="display: flex; width: 100%;height: 15%; justify-content: space-between;">
                     <div class="takenote3MODALfooter">
-                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/bell-ring-alarm.png'>
-                        </div>
-                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/add-contact.png'>
-                        </div>
-                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/art.png'></div>
-                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/download-file.png'>
-                        </div>
+                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/bell-ring-alarm.png'></div>
+                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/add-contact.png'></div>
+                        <div class="iconbackground btn " content="#a1" ><img class="takenote3MODALicon" src='../Assets/art.png'></div>
+                        <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/download-file.png'></div>
                         <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/delete.png'></div>
                         <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/dots.png'></div>
                     </div>
-                    <button class="takenote3MODALclosebutton" data-dismiss="modal">Close</button>
+                    <button  class="closebutton" id="closebutton" onclick="takenote3MODALclosebuttonfunc()" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+
+        <div class="hidden" id="a1">
+            <div class="popover-body"></div>
+        </div>
+    </div>
     </div>
 
 </body>

@@ -1,28 +1,30 @@
 
-$(document).ready(function () {
-    $("#nextbutton").click(function () {
+$(document).ready( function () {
+    $("#nextbutton").click(async function () {
         event.preventDefault();
 
         let email = $("#email").val();
         let password = $("#password").val();
 
-        // console.log("button clicked", email, password)
+        console.log("button clicked", email, password)
 
         let obj = {
             email: email,
             password: password
         }
 
-        // console.log("button clicked", obj)
+        console.log("button clicked", obj)
 
-        $.ajax({
+        await $.ajax({
             type: "POST",
             url: "http://localhost:5454/api/v1/users/login",
             data: obj,
             success: function (res) {
-                alert("data posted succesfully");
-                console.log(res)
+                // alert("data posted succesfully");
+                // console.log(res)
                 localStorage.setItem("token",`Bearer ${res.data}`)
+                localStorage.setItem("email",`${email}`)
+                validate()
             },
             error: function (error) {
                 console.log(error.responseJSON);
@@ -33,7 +35,7 @@ $(document).ready(function () {
 })
 
 function validate(){
-    window.location.href = "http://127.0.0.1:5500/Html/main.html";
+   window.location.href = "http://127.0.0.1:5501/Html/main.html";
 }
 
 

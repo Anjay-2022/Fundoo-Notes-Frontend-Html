@@ -25,6 +25,11 @@
     height: 25px;
     width: 25px;
 }
+#fundooNotesimg{
+    height: 30px;
+    width: 150px;
+    
+}
 
 .menukeep {
     display: flex;
@@ -65,6 +70,8 @@
     background-color: #F1F3F4;
     border: 2px solid #F1F3F4;
     font-size: 120%;
+    border :none;
+    outline: none;
 }
 
 .refreshAccount {

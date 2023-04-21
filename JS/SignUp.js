@@ -1,7 +1,7 @@
 $(document).ready(
     function () {
     $("#nextbutton").click(
-        function () {
+        function (event) {
         event.preventDefault();
 
         let firstname = $("#firstname").val();
@@ -25,8 +25,9 @@ $(document).ready(
             url: "http://localhost:5454/api/v1/users/registerUser",
             data: obj,
             success: function (res) {
-                alert("data posted succesfully");
+                // alert("data posted succesfully");
                 console.log(res)
+                window.location.href = "http://127.0.0.1:5501/Html/SignIn.html";
             },
             error: function (error) {
                 console.log(error.responseJSON);
