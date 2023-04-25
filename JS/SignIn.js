@@ -20,8 +20,6 @@ $(document).ready( function () {
             url: "http://localhost:5454/api/v1/users/login",
             data: obj,
             success: function (res) {
-                // alert("data posted succesfully");
-                // console.log(res)
                 localStorage.setItem("token",`Bearer ${res.data}`)
                 localStorage.setItem("email",`${email}`)
                 validate()

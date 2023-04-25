@@ -79,9 +79,7 @@
         </div>
         <div class="sidenav" id="sidenav" >
             <div class="sidenavtile" onclick="getallnotes()">
-                <div class="iconcontainerSmall"><img class="icon" '
-                        src='../Assets/light-bulb.png'>
-                </div>
+                <div class="iconcontainerSmall"><img class="icon" src='../Assets/light-bulb.png'></div>
                 <div class="tilename">Notes</div>
             </div>
             <div class="sidenavtile" onclick="toggle()">
@@ -114,11 +112,11 @@
             </div>
 
             <div class="takenoteSecond" id="takenote2" >
-                <div class="takenoteTwotitle"><input class="takenoteTwotitlefield" id="takenoteTwotitlefield"
+                <div class="takenoteTwotitle"><input class="takenoteTwotitlefield" id="takenoteTwotitlefield" autocomplete="off" spellcheck="false"
                         type="text" placeholder="Title">
-                    <div class="iconbackground"><img class="takenote2icon" src='../Assets/tack.png'></div>
+                    <div class="iconbackground" id="closetakenote2" onclick="closenote2()"><img class="takenote2icon" src='../Assets/cross.png'></div>
                 </div>
-                <input class="takenoteTwoinputfield" id="takenoteTwoinputfield" type="text" placeholder="Take a note..."></input>
+                <input class="takenoteTwoinputfield" id="takenoteTwoinputfield" type="text" placeholder="Take a note..." autocomplete="off" spellcheck="false"></input>
                 <div class="takenoteTwofooter">
                     <div class="takenoteTwofootericon">
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/bell-ring-alarm.png'>
@@ -131,12 +129,10 @@
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/undo.png'></div>
                         <div class="iconbackground"><img class="takenote2icon" src='../Assets/redo.png'></div>
                     </div>
-                    <button class="takenoteTwoclosebutton" onclick="takenoteTwoclosebutton()">Close</button>
+                    <button class="takenoteTwoclosebutton" onclick="takenoteTwoclosebutton()">Create Note</button>
                 </div>
             </div>
             <div class="SaveNoteContainerclass" id="SaveNoteContainer1"></div>
-            <!-- <div class="SaveNoteContainerclassTrash" id="SaveNoteContainerTrash1"></div>
-            <div class="SaveNoteContainerclassArchive" id="SaveNoteContainerArchive1"></div> -->
         </div>
         <div class="main2" id="main2">
             <div class="Archive" id="Archive"></div>
@@ -153,10 +149,10 @@
     <div class="modal fade" id="myModal" role="dialog">
         <div class="SaveNoteContainerModal"  >
             <div class="takenote3MODAL" id="takenote3MODAL">
-                <div class="takenote3MODALtitle"><input class="takenote3MODALtitlefield" id="takenote3MODALtitlefield" type="text" value="">
+                <div class="takenote3MODALtitle"><input class="takenote3MODALtitlefield" id="takenote3MODALtitlefield" type="text" value="" autocomplete="off" spellcheck="false">
                     <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/tack.png'></div>
                 </div>
-                <input class="takenote3MODALinputfield"  id="takenote3MODALinputfield" type="text" />
+                <input class="takenote3MODALinputfield"  id="takenote3MODALinputfield" type="text" autocomplete="off" spellcheck="false" />
                 <div style="display: flex; width: 100%;height: 15%; justify-content: space-between;">
                     <div class="takenote3MODALfooter">
                         <div class="iconbackground"><img class="takenote3MODALicon" src='../Assets/bell-ring-alarm.png'></div>

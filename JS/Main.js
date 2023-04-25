@@ -1,19 +1,18 @@
 var refesh = true
 var colour = "white"
+const baseurl="http://localhost:5454/api/v1"
 $(document).ready(
     async function () {
         let token = localStorage.getItem("token")
         await $.ajax({
             type: "GET",
-            url: "http://localhost:5454/api/v1/notes/all",
+            url: `${baseurl}/notes/all`,
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Authorization', token);
             },
             success: function (res) {
                 for (let i = res.data.length - 1; i >= 0; i--) {
-
-                    if ( res.data[i].trash==false &&  res.data[i].archive==false) {
-                        //console.log(res.data[i].colour)
+                    if (res.data[i].trash == false && res.data[i].archive == false) {
                         const abc = `
                             <div class="takenote3" id="takenote3" style="background-color:${res.data[i].colour}" onclick='copynote3Tomodal("${res.data[i].title}","${res.data[i].description}","${res.data[i]._id}")'>
                             <div class="takenote3title" data-toggle="modal" data-target="#myModal"><div class="takenote3titlefield" id="takenote3titlefield" type="text" value="" >${res.data[i].title}</div>
@@ -51,11 +50,10 @@ $(document).ready(
 
         let color = ["#b4eeb4", "#eedd82", "#82eedd", "#00FF00", "#8293ee", "#FFFF00", "#eea782", "#dd82ee"]
         for (let i = 0; i < color.length; i++) {
-            // console.log(color[i]);
             let code = `<div class="colourtile" style="display: flex;flex-direction: row;height: 20px;width: 20px;background-color: ${color[i]}; border-radius: 100%;" onclick='setcolour("${color[i]}")'></div>`
             $(".popover-body").append(code);
         }
-        
+
         $(".logOut").popover({
             html: true,
             title: localStorage.getItem("email"),
@@ -68,13 +66,13 @@ $(document).ready(
 
         await $.ajax({
             type: "GET",
-            url: "http://localhost:5454/api/v1/notes/all",
+            url: `${baseurl}/notes/all`,
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Authorization', token);
             },
             success: function (res) {
                 let data = res.data.map((element) => {
-                    if (element.archive == true &&  element.trash == false ) {
+                    if (element.archive == true && element.trash == false) {
                         const abc = `
                         <div class="takenote3" id="takenote3" style="background-color:${element.colour}" >
                         <div class="takenote3title" data-toggle="modal" data-target="#myModal"><div class="takenote3titlefield" type="text" value="${element.title}" onclick='copynote3Tomodal("${element.title}","${element.description}","${element._id}")'>${element.title}</div>
@@ -101,7 +99,7 @@ $(document).ready(
 
         await $.ajax({
             type: "GET",
-            url: "http://localhost:5454/api/v1/notes/all",
+            url: `${baseurl}/notes/all`,
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Authorization', token);
             },
@@ -130,55 +128,46 @@ $(document).ready(
                 console.log(error.responseJSON);
             },
         })
-});
+    });
 
 
 function takenoteOneclicked() {
-    // console.log("note 1 clicked")
     document.getElementById("takenote1").style.display = "none"
     document.getElementById("takenote2").style.display = "flex"
 }
 async function takenoteTwoclosebutton() {
-    // console.log("note 2 clicked")
     document.getElementById("takenote1").style.display = "flex"
     document.getElementById("takenote2").style.display = "none"
 
-    //apicall
     let title = $("#takenoteTwotitlefield").val();
     let description = $("#takenoteTwoinputfield").val();
-
-    // console.log("button clicked", title, description)
-
     let obj = {
         title: title,
         description: description,
         colour: colour
     }
-    // console.log(obj);
     let token = localStorage.getItem("token")
 
     await $.ajax({
         type: "POST",
-        url: "http://localhost:5454/api/v1/notes/add",
+        url: `${baseurl}/notes/add`,
         data: obj,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', token);
         },
         success: function (res) {
-            // alert("Note created succesfully");
             console.log(res)
         },
         error: function (error) {
             console.log(error.responseJSON);
         },
     });
-  
     location.reload()
     return false;
 }
 let ID = ''
 function copynote3Tomodal(title, desc, id, colour) {
-    //  console.log(title, desc, id,colour);
+
     ID = id
     var title = $('#takenote3MODALtitlefield').val(title)
     var title = $('#takenote3MODALinputfield').val(desc)
@@ -188,31 +177,24 @@ function copynote3Tomodal(title, desc, id, colour) {
     document.getElementById("closebutton").style.backgroundColor = colour
 }
 async function takenote3MODALclosebuttonfunc() {
-    // UPdate  notes api call
-    // console.log("close button clicked")
-
     let title = $("#takenote3MODALtitlefield").val();
     let description = $("#takenote3MODALinputfield").val();
-
-    // console.log("button clicked", title, description)
-
     let obj = {
         title: title,
         description: description,
         colour: colour
     }
-    // console.log(obj, ID, colour)
     let token = localStorage.getItem("token")
 
     await $.ajax({
         type: "PUT",
-        url: `http://localhost:5454/api/v1/notes/${ID}`,
+        url: `${baseurl}/notes/${ID}`,
         data: obj,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', token);
         },
         success: function (res) {
-            // alert("Note updated succesfully");
+
             console.log(res)
         },
         error: function (error) {
@@ -221,64 +203,54 @@ async function takenote3MODALclosebuttonfunc() {
     });
     location.reload()
     return false;
-
 }
 
 async function toggleTrash(id) {
-    // console.log("id---", id)
     let token = localStorage.getItem("token")
 
     await $.ajax({
         type: "PUT",
-        url: `http://localhost:5454/api/v1/notes/${id}/trash`,
+        url:`${baseurl}/notes/${id}/trash`,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', token);
         },
         success: function (res) {
-            // alert("Note marked trash succesfully");
             console.log(res)
         },
         error: function (error) {
             console.log(error.responseJSON);
         },
     });
-    // page refesh
     location.reload()
     return false;
 }
 async function toggleArchive(id) {
     refesh = false
-    // console.log("archive call");
     let token = localStorage.getItem("token")
     await $.ajax({
         type: "PUT",
-        url: `http://localhost:5454/api/v1/notes/${id}/archive`,
+        url: `${baseurl}/notes/${id}/archive`,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', token);
         },
         success: function (res) {
-            // alert("Note mark archive succesfully");
             console.log(res)
         },
         error: function (error) {
             console.log(error.responseJSON);
         },
     });
-    //page refesh
     location.reload()
     return false;
 }
 
 async function getArchive() {
-    // console.log("Archive call");
     document.getElementById("main").style.display = "none"
     document.getElementById("main3").style.display = "none"
     document.getElementById("main2").style.display = "flex"
     document.getElementById("main4").style.display = "none"
 }
 async function getTrash() {
-
-    // console.log("Trash call");
     document.getElementById("main").style.display = "none"
     document.getElementById("main2").style.display = "none"
     document.getElementById("main3").style.display = "flex"
@@ -286,16 +258,15 @@ async function getTrash() {
 
 }
 async function deletenote(id) {
-    
+
     let token = localStorage.getItem("token")
     await $.ajax({
         type: "DELETE",
-        url: `http://localhost:5454/api/v1/notes/${id}`,
+        url: `${baseurl}/notes/${id}`,
         beforeSend: function (xhr) {
             xhr.setRequestHeader('Authorization', token);
         },
         success: function (res) {
-            // alert("Note deleted succesfully");
             console.log(res)
         },
         error: function (error) {
@@ -308,17 +279,28 @@ async function deletenote(id) {
 }
 
 document.addEventListener("click", (evt) => {
-    // console.log("hello")
-    let clickedplace = evt.target; // clicked element 
-    // console.log(clickedplace)
+    let clickedplace = evt.target;
     const main = document.getElementById("main");
-    // console.log(takenote2)
     if (clickedplace == main) {
         document.getElementById("takenote1").style.display = "flex"
         document.getElementById("takenote2").style.display = "none"
+        colour = "white"
+        document.getElementById("takenote2").style.backgroundColor = colour
+        document.getElementById("takenoteTwotitlefield").style.backgroundColor = colour
+        document.getElementById("takenoteTwoinputfield").style.backgroundColor = colour
+        document.getElementById("takenoteTwoclosebutton").style.backgroundColor = colour
     }
 })
-
+function closenote2() {
+    document.getElementById("takenote1").style.display = "flex"
+    document.getElementById("takenote2").style.display = "none"
+    colour = "white"
+    colour = "white"
+    document.getElementById("takenote2").style.backgroundColor = colour
+    document.getElementById("takenoteTwotitlefield").style.backgroundColor = colour
+    document.getElementById("takenoteTwoinputfield").style.backgroundColor = colour
+    document.getElementById("takenoteTwoclosebutton").style.backgroundColor = colour
+}
 
 
 
@@ -332,12 +314,15 @@ function getallnotes() {
 }
 function setcolour(colourcode) {
     colour = colourcode
-    // console.log(colour)
     $(".btn").popover('hide');
     document.getElementById("takenote3MODAL").style.backgroundColor = colourcode
     document.getElementById("takenote3MODALtitlefield").style.backgroundColor = colourcode
     document.getElementById("takenote3MODALinputfield").style.backgroundColor = colourcode
     document.getElementById("closebutton").style.backgroundColor = colourcode
+    document.getElementById("takenote2").style.backgroundColor = colourcode
+    document.getElementById("takenoteTwotitlefield").style.backgroundColor = colourcode
+    document.getElementById("takenoteTwoinputfield").style.backgroundColor = colourcode
+    document.getElementById("takenoteTwoclosebutton").style.backgroundColor = colourcode
 }
 
 function refresh() {
@@ -347,18 +332,17 @@ function refresh() {
 let previousKey = ""
 async function search() {
     let key = document.getElementById("search").value
-    if(key=="") return
+    if (key == "") return
     document.getElementById("main").style.display = "none"
     document.getElementById("main2").style.display = "none"
     document.getElementById("main3").style.display = "none"
     document.getElementById("main4").style.display = "flex"
 
     let token = localStorage.getItem("token")
-    // console.log(previousKey, key)
-    if (previousKey !== key ) {
+    if (previousKey !== key) {
         await $.ajax({
             type: "GET",
-            url: "http://localhost:5454/api/v1/notes/all",
+            url: `${baseurl}/notes/all`,
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('Authorization', token);
             },

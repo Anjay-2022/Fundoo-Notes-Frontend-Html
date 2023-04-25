@@ -9,7 +9,6 @@ $(document).ready(
         let email = $("#username").val();
         let password = $("#password").val();
 
-        // console.log("button clicked",firstname,lastname, email, password)
 
         let obj = {
             firstname : firstname,
@@ -18,15 +17,13 @@ $(document).ready(
             password: password
         }
 
-        // console.log("button clicked", obj)
+
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:5454/api/v1/users/registerUser",
+            url: "http://localhost:5454/api/v1/users/",
             data: obj,
             success: function (res) {
-                // alert("data posted succesfully");
-                console.log(res)
                 window.location.href = "http://127.0.0.1:5501/Html/SignIn.html";
             },
             error: function (error) {
